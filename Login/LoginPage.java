@@ -140,11 +140,13 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?useSSL=false","root","Meets@1989");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?useSSL=false","root","mysql@123");
+            //Change the password= mysql@123 and database name =mydb
             String username = userfield.getText();
             String password = passfield.getText();
             java.sql.Statement stm = con.createStatement();
             String sql = "select * from LoginPage where username='"+username+"'and password ='"+password"'");
+            //creation of table here to insert these values
             ResultSet rs = stm.executeQuery(sql);
             
             if(rs.next()){
