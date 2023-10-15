@@ -202,7 +202,7 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             String query =  "insert into `signup`(`username`,`password`,`name`,`phone`,`address`,`age`,`gender`)VALUES(?,?,?,?,?,?,?);";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mpr","root","Meets@1989");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mpr","root","password");
             pst=con.prepareStatement(query);
             pst.setString(1, txtUsername.getText());
             pst.setString(2, txtPassword.getText());
